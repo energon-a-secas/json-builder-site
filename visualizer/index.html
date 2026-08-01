@@ -12,12 +12,18 @@
   <meta name="theme-color" content="#040714">
   <link rel="icon" type="image/x-icon" href="../favicon.ico" />
   <link rel="stylesheet" href="css/style.css">
+  <!-- Neorgon Header Kit (vendored; ?header=live swaps CSS to CDN) -->
+  <script>(function(){var m=location.search.match(/[?&]theme=([\w-]+)/)||document.cookie.match(/(?:^|;\s*)neo_theme=([\w-]+)/);if(m&&m[1]!=='default')document.documentElement.dataset.theme=decodeURIComponent(m[1]);})();</script>
+  <link rel="stylesheet" href="../css/neorgon-header.css">
+  <link rel="stylesheet" href="../css/neorgon-themes.css">
+  <link rel="stylesheet" href="https://pub-b597cd281a384f98a47e1f043a6c4160.r2.dev/v1.0.0/header/season.css">
+  <script defer src="../js/neorgon-header.js"></script>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Skip to content</a>
 <!-- ── Header ── -->
-<header class="header-bar">
+<header class="header-bar" data-header-mode="app">
   <div class="header-logo">
     <a href="https://neorgon.com/" target="_blank" rel="noopener noreferrer">
       <img src="../energon-classic-logo.png" class="header-logo-img" alt="Energon">
@@ -27,12 +33,14 @@
       <div class="header-subtitle">Explore, filter, and pivot any JSON dataset</div>
     </div>
   </div>
-  <div class="header-actions">
+  <div class="header-right">
+    <div class="header-actions">
     <a href="../" class="btn btn-ghost" style="text-decoration:none" title="Build JSON with drag-and-drop blocks">Builder</a>
     <a href="../scrambler/" class="btn btn-ghost" style="text-decoration:none" title="Anonymise JSON for safe sharing">Scrambler</a>
-    <button id="btn-new-json" class="btn btn-ghost hidden-el" title="Clear and load new JSON">Load JSON</button>
+    <button data-keep-mobile id="btn-new-json" class="btn btn-ghost hidden-el" title="Clear and load new JSON">Load JSON</button>
+    </div>
     <a href="https://neorgon.com/" class="header-home" title="Neorgon home" aria-label="Neorgon home">
-      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
     </a>
   </div>
 </header>
