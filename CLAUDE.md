@@ -13,10 +13,10 @@ A visual, block-based JSON editor. Single file: `index.html` with inline CSS and
 Everything is self-contained in `index.html`.
 
 **State model (in-memory only, no localStorage):**
-- `root` — the root node `{ id: 0, type, key, children, collapsed }`
-- `nodeMap` — flat `{ id → node }` lookup for O(1) access
-- `idCounter` — auto-increment for node IDs
-- `_drag` — ephemeral drag state `{ source: 'palette'|'canvas', type?, nodeId? }`
+- `root`: the root node `{ id: 0, type, key, children, collapsed }`
+- `nodeMap`: flat `{ id → node }` lookup for O(1) access
+- `idCounter`: auto-increment for node IDs
+- `_drag`: ephemeral drag state `{ source: 'palette'|'canvas', type?, nodeId? }`
 
 **Node shape:**
 - Container nodes (`object`, `array`): `{ id, type, key, children: [], collapsed }`
@@ -24,12 +24,12 @@ Everything is self-contained in `index.html`.
 
 **Rendering pipeline:** All state mutations call `render()` → rebuilds the entire `#tree-root` DOM from scratch → calls `updateOutput()` to re-render the JSON panel. No virtual DOM or diffing.
 
-**Drag-and-drop:** Two sources — palette blocks (create new node) and canvas drag handles (move existing node). Drop targets are `.drop-zone` elements (between nodes) and `.empty-drop` elements (into empty containers). The `_drag` global tracks the active drag.
+**Drag-and-drop:** Two sources, palette blocks (create new node) and canvas drag handles (move existing node). Drop targets are `.drop-zone` elements (between nodes) and `.empty-drop` elements (into empty containers). The `_drag` global tracks the active drag.
 
 **JSON ↔ Tree:**
-- `nodeToValue(node)` — tree → JS value (used for output)
-- `jsonToTree(value, key)` — JS value → node tree (used for import/paste)
-- `loadFromValue(value)` — resets state and rebuilds tree from a parsed JS value
+- `nodeToValue(node)`: tree → JS value (used for output)
+- `jsonToTree(value, key)`: JS value → node tree (used for import/paste)
+- `loadFromValue(value)`: resets state and rebuilds tree from a parsed JS value
 
 **Edit mode:** The right panel toggles between a syntax-highlighted `<pre>` view and a raw textarea. "Apply" parses the textarea content, calls `loadFromValue`, and exits edit mode.
 
