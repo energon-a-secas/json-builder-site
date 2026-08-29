@@ -4,7 +4,7 @@
 export const DEMOS = [
   {
     label: 'Sales Orders', sub: 'Flat array',
-    title: 'Flat array of orders — sort, filter, search, and export to CSV.',
+    title: 'Flat array of orders: sort, filter, search, and export to CSV.',
     data: [
       { order_id: 'ORD-001', customer: 'Alice Brown',    product: 'Laptop Pro',     qty: 1, unit_price: 1299.99, total: 1299.99, status: 'shipped',   region: 'West'  },
       { order_id: 'ORD-002', customer: 'Bob Chen',       product: 'Wireless Mouse', qty: 3, unit_price:   29.99, total:   89.97, status: 'delivered', region: 'East'  },
@@ -22,7 +22,7 @@ export const DEMOS = [
   },
   {
     label: 'Events log', sub: 'Flat array',
-    title: 'Simple flat list — timestamps, level, message. Good for log-style data.',
+    title: 'Simple flat list: timestamps, level, message. Good for log-style data.',
     data: [
       { ts: '2024-01-15T09:00:00Z', level: 'info',  message: 'Server started',        source: 'api' },
       { ts: '2024-01-15T09:01:22Z', level: 'warn',  message: 'High memory usage',     source: 'worker' },
@@ -36,7 +36,7 @@ export const DEMOS = [
   },
   {
     label: 'Team Stats', sub: 'Grouped by department',
-    title: 'Grouped by department — collapse groups, filter by column values.',
+    title: 'Grouped by department: collapse groups, filter by column values.',
     data: {
       'Engineering': { members: [
         { name: 'Sam Torres',  role: 'Backend',  level: 'Senior', tickets_closed: 87, pr_reviews: 34, bugs_filed: 12, velocity: 42.5, satisfaction: 4.8 },
@@ -64,7 +64,7 @@ export const DEMOS = [
   },
   {
     label: 'Project Activity', sub: 'Grouped + nested history',
-    title: 'Grouped by project with period metrics — use Pivot to pick a user and metric across projects.',
+    title: 'Grouped by project with period metrics: use Pivot to pick a user and metric across projects.',
     data: {
       'COSP': { users: [
         { name: 'Dave',  role: 'lead',     history: { '12m': { tickets: 14, dynamic_percentage: 13.3 }, '6m': { tickets: 6,  dynamic_percentage: 17.1 }, '3m': { tickets: 0, dynamic_percentage: 0.0  }, '1m': { tickets: 0, dynamic_percentage: 0.0  } } },
@@ -89,7 +89,7 @@ export const DEMOS = [
   },
   {
     label: 'People per project', sub: 'Pivot by person · see user info',
-    title: 'People per project — pivot by person to see hours/tasks across projects; click a row to see full user info.',
+    title: 'People per project: pivot by person to see hours/tasks across projects; click a row to see full user info.',
     data: {
       'Platform': { people: [
         { name: 'Jordan Lee',   email: 'jordan@co.io',     role: 'Tech Lead',   allocation: { '12m': { hours: 420, tasks: 48 }, '6m': { hours: 210, tasks: 24 }, '3m': { hours: 105, tasks: 12 }, '1m': { hours: 38, tasks: 4 } } },
@@ -113,7 +113,7 @@ export const DEMOS = [
   },
   {
     label: 'SaaS Metrics', sub: 'Nested data, many columns',
-    title: 'Grouped accounts with nested health by period — click nested cells to see period breakdown.',
+    title: 'Grouped accounts with nested health by period, click nested cells to see period breakdown.',
     data: {
       'Growth': { accounts: [
         { name: 'Acme Corp',      tier: 'Enterprise', mrr: 12400, arr: 148800, seats: 240, active_seats: 198, usage_pct: 82.5, nps: 72, churn_risk: 'low',      csm: 'Leila', health: { '1m': { logins: 3200, tickets:  4 }, '3m': { logins:  9100, tickets: 11 }, '6m': { logins: 17800, tickets: 22 } } },

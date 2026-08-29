@@ -1,4 +1,4 @@
-# JSON Studio — Good practice patterns
+# JSON Studio: Good practice patterns
 
 Minimal JSON shapes that work well with the **JSON Visualizer** (table, filters, pivot). Use these as references when building or importing data.
 
@@ -46,7 +46,7 @@ Minimal JSON shapes that work well with the **JSON Visualizer** (table, filters,
 
 Each row must have:
 
-- A **string identifier** field (e.g. `name`, `user`, `username`) — used as “User” in the Pivot toolbar.
+- A **string identifier** field (e.g. `name`, `user`, `username`): used as “User” in the Pivot toolbar.
 - A **nested object** whose keys are period labels (e.g. `12m`, `6m`, `3m`, `1m`) and whose values are objects of numeric metrics (e.g. `hours`, `tasks`).
 
 ```json
@@ -89,7 +89,7 @@ Each row must have:
 
 | Shape              | Top-level   | Group key (if grouped) | Pivot |
 |--------------------|------------|-------------------------|-------|
-| Flat array         | `[ … ]`    | —                       | No    |
+| Flat array         | `[ … ]`    | none | No    |
 | Grouped            | `{ "K": { "members": [ … ] } }` | Same key in every group | No    |
 | Grouped + pivot    | Same as grouped | Same key in every group | Yes (needs identifier + period→metrics field) |
 

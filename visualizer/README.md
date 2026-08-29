@@ -1,6 +1,6 @@
 # JSON Visualizer
 
-A zero-dependency JSON explorer. Open `index.html` directly in any browser — no server or build step required.
+A zero-dependency JSON explorer. Open `index.html` directly in any browser. No server or build step required.
 
 ## What it does
 
@@ -50,8 +50,8 @@ Shows aggregates for the **currently filtered** records:
 
 ### Row detail modal
 Click any data row to open a popup showing that record from the opposite perspective:
-- **Grouped mode** — rows become projects, columns become the numeric fields. Useful for seeing how one person's numbers are distributed across all projects. The footer shows totals with the same 100% indicator.
-- **Flat mode** — shows a key/value detail card for the single record.
+- **Grouped mode**: rows become projects, columns become the numeric fields. Useful for seeing how one person's numbers are distributed across all projects. The footer shows totals with the same 100% indicator.
+- **Flat mode**: shows a key/value detail card for the single record.
 
 Dismiss with the × button, a click outside the modal, or Escape.
 
@@ -64,11 +64,11 @@ Dismiss with the × button, a click outside the modal, or Escape.
 
 **Everything happens locally in your browser. Zero data submission.**
 
-- ✅ No network requests — your JSON never leaves your machine
-- ✅ No analytics or tracking — no Google Analytics, no third-party scripts
-- ✅ No cookies — no tracking identifiers
-- ✅ Content Security Policy enforced — blocks external scripts
-- ✅ Local storage only — uses `sessionStorage` (cleared when tab closes) to persist data across page refreshes within the same session
+- ✅ No network requests: your JSON never leaves your machine
+- ✅ No analytics or tracking: no Google Analytics, no third-party scripts
+- ✅ No cookies: no tracking identifiers
+- ✅ Content Security Policy enforced: blocks external scripts
+- ✅ Local storage only: uses `sessionStorage` (cleared when tab closes) to persist data across page refreshes within the same session
 
 **Safe for sensitive/confidential data.** GDPR/CCPA compliant (no data collection). Can be used offline once the page is loaded.
 
@@ -76,8 +76,8 @@ Dismiss with the × button, a click outside the modal, or Escape.
 
 The visualizer infers each column's type at load time:
 
-- **number** — every non-null value across all groups is a JS `number`.
-- **string** — anything else (mixed types, strings, booleans, nulls).
+- **number**: every non-null value across all groups is a JS `number`.
+- **string**: anything else (mixed types, strings, booleans, nulls).
 
 Numeric columns are right-aligned and use a monospace font. Only numeric columns appear in the stats sidebar and in the modal's comparison table.
 

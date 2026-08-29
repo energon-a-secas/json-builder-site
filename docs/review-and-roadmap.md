@@ -1,4 +1,4 @@
-# JSON Studio — Engineer & UI Review + Roadmap
+# JSON Studio: Engineer & UI Review + Roadmap
 
 Review of the JSON Builder site (Builder, Viewer, Scrambler) as an engineer and as a web UI designer, plus a prioritized list of improvements.
 
@@ -27,7 +27,7 @@ Review of the JSON Builder site (Builder, Viewer, Scrambler) as an engineer and 
 
 **Strengths**
 
-- **State**: Minimal — `root`, `nodeMap`, `idCounter`, `drag`, `editMode`. No redundant duplication; `nodeMap` gives O(1) lookup for drop targets and updates.
+- **State**: Minimal: `root`, `nodeMap`, `idCounter`, `drag`, `editMode`. No redundant duplication; `nodeMap` gives O(1) lookup for drop targets and updates.
 - **Rendering** (`render.js`): Recursive `renderNode()`; drop zones (empty and between siblings) are created in the same pass. Type badges and key/value inputs are consistent.
 - **Drag**: Palette drag creates new node; canvas drag moves node. `dataTransfer` and `state.drag` distinguish source. Drop zones highlight on dragover.
 - **Output**: Live JSON panel with syntax highlighting; Edit mode allows raw paste with Apply; Copy and Download are straightforward.
@@ -59,7 +59,7 @@ Review of the JSON Builder site (Builder, Viewer, Scrambler) as an engineer and 
 
 **Improvement opportunities**
 
-- **Example buttons**: All demos look the same (label + sub). A short description or icon per example (e.g. “People per project — pivot by person”) would help first-time users.
+- **Example buttons**: All demos look the same (label + sub). A short description or icon per example (e.g. “People per project, pivot by person”) would help first-time users.
 - **Pivot discoverability**: When pivot is available, a small hint (“Pivot by person/metric”) next to the Pivot button could increase usage.
 - **Density**: No “compact” table mode; adding a density toggle (comfortable / compact) would help power users.
 - **Mobile**: Toolbar wraps; table horizontal scroll is present but pivot table and timeline could use a more mobile-friendly layout (e.g. cards per project for pivot).
@@ -84,9 +84,9 @@ Review of the JSON Builder site (Builder, Viewer, Scrambler) as an engineer and 
 
 A new Viewer demo, **“People per project”**, was added so you can:
 
-1. **List people per project** — Data is grouped by project (e.g. Platform, Mobile, Data); each project has a `people` array with `name`, `email`, `role`, and `allocation`.
-2. **Pivot by person** — Use **Pivot** → choose a person in the “User” dropdown and a metric (e.g. `hours` or `tasks`). The table (and timeline) show that person’s metric across projects.
-3. **See user info** — Click any row to open the record modal and see full fields: name, email, role, and the nested `allocation` (with period pills and metric table).
+1. **List people per project**: Data is grouped by project (e.g. Platform, Mobile, Data); each project has a `people` array with `name`, `email`, `role`, and `allocation`.
+2. **Pivot by person**: Use **Pivot** → choose a person in the “User” dropdown and a metric (e.g. `hours` or `tasks`). The table (and timeline) show that person’s metric across projects.
+3. **See user info**: Click any row to open the record modal and see full fields: name, email, role, and the nested `allocation` (with period pills and metric table).
 
 So after loading “People per project”, you can both pivot to compare a person across projects and open any row to inspect that user’s details.
 
@@ -94,22 +94,22 @@ So after loading “People per project”, you can both pivot to compare a perso
 
 ## 4. Prioritized roadmap
 
-### P1 — JSON Dynamic View (Viewer)
+### P1: JSON Dynamic View (Viewer)
 
 - **Persistent “Open in Viewer” from Builder**: Button in Builder that serializes current tree to JSON, stores in `sessionStorage` (or hash), and navigates to `viewer/` so the Viewer opens with that JSON already loaded. Optionally support `viewer/#load=<base64>` or `?json=...` so the Builder can pass payload via URL.
 - **View state in URL**: Already partially there (`#v=`). Consider adding “Share” (copy link with state + optional compressed JSON) so users can share a specific view.
 - **Pivot UX**: When pivot is available, show a one-line hint: “Pivot by user and metric to see values across groups.” Consider defaulting to first user and first metric when entering pivot mode.
 
-### P2 — Drag-and-drop structure (Builder)
+### P2: Drag-and-drop structure (Builder)
 
 - **Drop affordance**: When dragging from palette, show a clear “Drop here to create root” or “Drop on canvas to add” area (e.g. dashed border or placeholder).
 - **Reorder within parent**: Ensure drag-between-siblings is obvious (e.g. line indicator between rows) and that drop on “empty” zone at end of list works.
 - **Keyboard**: Delete node (with confirmation if it has children), Expand all / Collapse all, optional Copy node as JSON.
 - **Undo/redo**: Single-level or multi-level undo for add/remove/edit/move would make the Builder safer for large structures.
 
-### P3 — Examples and good-practice patterns
+### P3: Examples and good-practice patterns
 
-- **Viewer**: Add short tooltips or descriptions to example buttons (e.g. “People per project — pivot by person, see allocation across projects”). Optionally add one more “flat” example (e.g. “Events log”) for users who only have flat arrays.
+- **Viewer**: Add short tooltips or descriptions to example buttons (e.g. “People per project, pivot by person, see allocation across projects”). Optionally add one more “flat” example (e.g. “Events log”) for users who only have flat arrays.
 - **Builder**: Add “Start from template” or “Examples” dropdown: e.g. “Empty object”, “Array of objects” (with 2–3 sample keys), “Grouped (projects → people)” so users can start from a pivot-friendly shape. Document in README that the Viewer expects either:
   - Flat: `[ { … }, … ]`
   - Grouped: `{ "GroupName": { "members"|"people"|"users": [ { … } ] } }`
